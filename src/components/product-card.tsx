@@ -18,6 +18,8 @@ export interface ProductCardProps {
 }
 
 export function ProductCard({ name, description, href, icon: Icon, image, favicon, delay = 0 }: ProductCardProps) {
+  const [imageError, setImageError] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -29,18 +31,25 @@ export function ProductCard({ name, description, href, icon: Icon, image, favico
       <Link href={href} className="block group h-full">
         <Card className="h-full bg-card/50 backdrop-blur-sm border-border/50 hover:border-border transition-all duration-500 relative overflow-hidden flex flex-col">
           {/* Project Preview Image */}
-          {image && (
-            <div className="relative h-48 w-full overflow-hidden border-b border-border/50">
-              <Image 
-                src={image} 
-                alt={`${name} preview`} 
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                unoptimized
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
-            </div>
-          )}
+          <div className="relative h-48 w-full overflow-hidden border-b border-border/50 bg-muted/20">
+            {image && !imageError ? (
+              <>
+                <Image 
+                  src={image} 
+                  alt={`${name} preview`} 
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  unoptimized
+                  onError={() => setImageError(true)}
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
+              </>
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center bg-linear-to-br from-muted/50 to-muted/20 group-hover:scale-105 transition-transform duration-500">
+                <Icon size={48} className="text-muted-foreground/20 group-hover:text-primary/20 transition-colors" />
+              </div>
+            )}
+          </div>
           
           {/* Subtle gradient orb on hover */}
           <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
