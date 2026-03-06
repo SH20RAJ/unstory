@@ -1,3 +1,4 @@
+"use client";
 import * as React from "react";
 import { BrainCircuit, BookOpen, Layers, Laptop, PenTool } from "lucide-react";
 import { ProductCard } from "@/components/product-card";

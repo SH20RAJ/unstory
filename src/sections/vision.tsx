@@ -6,7 +6,7 @@ export function VisionSection() {
   return (
     <section className="py-24 md:py-32 border-t border-border/50 relative overflow-hidden bg-muted/20">
       {/* Decorative background grids */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -97,15 +97,14 @@ export function VisionSection() {
                             transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
                           />
                         </div>
-                      </div>
+                        </div>
                     </div>
                   </motion.div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }

@@ -24,7 +24,7 @@ export function FounderSection() {
           className="flex flex-col items-center text-center max-w-2xl mx-auto"
         >
           <div className="relative group mb-8">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
             <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-background relative">
               {/* Replace with actual image later */}
               <AvatarImage src="/shaswat.jpg" alt="Shaswat Raj" className="object-cover" />
@@ -32,11 +32,11 @@ export function FounderSection() {
             </Avatar>
           </div>
 
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Shaswat Raj</h3>
-          <p className="text-primary font-medium mb-6">Founder & Engineer</p>
-          
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+            A word from our <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary/60">founder</span>
+          </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            "I built Unstory because I believe the tools we use dictate the quality of our output. We're on a mission to craft beautiful, lightning-fast software that gets out of your way and lets you do what you do best."
+            &quot;I built Unstory because I believe the tools we use dictate the quality of our output. We&apos;re on a mission to craft beautiful, lightning-fast software that gets out of your way and lets you do what you do best.&quot;
           </p>
 
           <div className="flex items-center gap-6">
