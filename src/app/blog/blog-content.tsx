@@ -7,6 +7,14 @@ import Link from "next/link";
 
 const posts = [
   {
+    title: "Welcome to Unstory: Our Journey Begins",
+    excerpt: "The story behind our studio and why we're dedicated to building the next generation of human potential tools.",
+    date: "March 6, 2026",
+    readTime: "3 min read",
+    category: "Company",
+    slug: "welcome-to-unstory",
+  },
+  {
     title: "Building the Next Generation Setup for Human Potential",
     excerpt: "Why we decided to create an ecosystem of interconnected tools rather than standalone applications.",
     date: "March 15, 2026",

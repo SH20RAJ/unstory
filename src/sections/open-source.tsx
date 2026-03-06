@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const repos = [
   {
-    name: "unstory/core",
+    name: "sh20raj/MindOS",
     description: "The core utility engine for Unstory AI applications.",
     stars: 1240,
     forks: 142,
@@ -16,7 +16,7 @@ const repos = [
     color: "bg-blue-500",
   },
   {
-    name: "unstory/ui",
+    name: "unstory-app/ui",
     description: "Our premium open-source React component library tailored for SaaS.",
     stars: 890,
     forks: 84,
@@ -24,7 +24,7 @@ const repos = [
     color: "bg-blue-500",
   },
   {
-    name: "unstory/shadcn-auth",
+    name: "unstory-app/shadcn-auth",
     description: "Next.js authentication strategies with beautiful shadcn/ui components.",
     stars: 3200,
     forks: 412,
@@ -75,7 +75,7 @@ export function OpenSourceSection() {
               className="flex flex-col sm:flex-row gap-4 w-full"
             >
               <Button asChild size="lg" className="rounded-full">
-                <a href="https://github.com/unstory" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/unstory-app" target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" /> View GitHub
                 </a>
               </Button>

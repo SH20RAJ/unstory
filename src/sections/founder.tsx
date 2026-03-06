@@ -40,19 +40,19 @@ export function FounderSection() {
           </p>
 
           <div className="flex items-center gap-6">
-            <a href="https://github.com/shaswatraj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
+            <a href="https://github.com/sh20raj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
               <Github size={24} />
               <span className="sr-only">GitHub</span>
             </a>
-            <a href="https://twitter.com/shaswatraj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
+            <a href="https://twitter.com/sh20raj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
               <Twitter size={24} />
               <span className="sr-only">Twitter</span>
             </a>
-            <a href="https://linkedin.com/in/shaswatraj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
+            <a href="https://linkedin.com/in/sh20raj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-full">
               <Linkedin size={24} />
               <span className="sr-only">LinkedIn</span>
             </a>
-            <a href="mailto:shaswat@unstory.app" className="group flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors ml-4">
+            <a href="mailto:founder@unstory.app" className="group flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors ml-4">
               Get in touch
               <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>

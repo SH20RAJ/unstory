@@ -22,7 +22,7 @@ export function ContactContent() {
           transition={{ delay: 0.1 }}
           className="text-lg text-muted-foreground max-w-2xl"
         >
-          Have a question about our products, enterprise pricing, or partnership opportunities? We'd love to hear from you.
+          Have a question about our products, enterprise pricing, or partnership opportunities? We&apos;d love to hear from you.
         </motion.p>
       </div>
 
@@ -46,7 +46,7 @@ export function ContactContent() {
           
           <div className="space-y-2">
             <label htmlFor="email" className="text-sm font-medium text-foreground">Email address</label>
-            <Input id="email" type="email" placeholder="linus@linux.org" className="bg-muted/20 border-border/50" />
+            <Input id="email" type="email" placeholder="contact@unstory.app" className="bg-muted/20 border-border/50" />
           </div>
           
           <div className="space-y-2">

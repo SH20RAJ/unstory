@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Products", href: "/products" },
   { name: "Developers", href: "/developers" },
   { name: "Open Source", href: "/open-source" },
-  { name: "Blog", href: "/blog" },
+  { name: "Blog", href: "https://blog.unstory.app" },
   { name: "About", href: "/about" },
 ];
 

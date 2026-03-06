@@ -18,7 +18,7 @@ export function Footer() {
             Unstory is a SaaS product studio building powerful AI and productivity tools.
           </p>
           <div className="flex gap-4 mt-4">
-            <a href="https://github.com/unstory" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://github.com/unstory-app" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Github size={20} />
             </a>
             <a href="https://twitter.com/unstory" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
@@ -52,9 +52,9 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <h4 className="font-semibold text-foreground">Company</h4>
           <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link>
-          <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
-          <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Careers</Link>
-          <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link>
+          <a href="https://blog.unstory.app" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</a>
+          <a href="mailto:contact@unstory.app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Careers</a>
+          <a href="mailto:contact@unstory.app" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
         </div>
 
       </div>
