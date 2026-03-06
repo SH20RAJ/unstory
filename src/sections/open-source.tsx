@@ -8,28 +8,28 @@ import Link from "next/link";
 
 const repos = [
   {
-    name: "sh20raj/MindOS",
-    description: "The core utility engine for Unstory AI applications.",
-    stars: 1240,
-    forks: 142,
+    name: "shade-solutions/github-mcp-plus",
+    description: "An enhanced, Node.js-based implementation of the official GitHub MCP server.",
+    stars: 840,
+    forks: 42,
     language: "TypeScript",
     color: "bg-blue-500",
   },
   {
-    name: "unstory-app/ui",
-    description: "Our premium open-source React component library tailored for SaaS.",
-    stars: 890,
-    forks: 84,
+    name: "shade-solutions/ai-agents-directory",
+    description: "A comprehensive directory for AI Agents, tools, and autonomous assistants.",
+    stars: 1200,
+    forks: 184,
     language: "TypeScript",
     color: "bg-blue-500",
   },
   {
-    name: "unstory-app/shadcn-auth",
-    description: "Next.js authentication strategies with beautiful shadcn/ui components.",
-    stars: 3200,
-    forks: 412,
-    language: "JavaScript",
-    color: "bg-yellow-400",
+    name: "shade-solutions/devatlas",
+    description: "Interactive developer roadmaps, career paths, and skill trees for modern engineering.",
+    stars: 2100,
+    forks: 312,
+    language: "TypeScript",
+    color: "bg-blue-500",
   },
 ];
 
