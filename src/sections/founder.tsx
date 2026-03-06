@@ -27,7 +27,7 @@ export function FounderSection() {
             <div className="absolute -inset-1 bg-linear-to-r from-primary to-blue-500 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
             <Avatar className="w-32 h-32 md:w-40 md:h-40 border-4 border-background relative">
               {/* Replace with actual image later */}
-              <AvatarImage src="/shaswat.jpg" alt="Shaswat Raj" className="object-cover" />
+              <AvatarImage src="https://i.pinimg.com/1200x/c2/df/c2/c2dfc21afbd68d306c357dd78fc2572e.jpg" alt="Shaswat Raj" className="object-cover" />
               <AvatarFallback className="text-4xl font-semibold bg-muted">SR</AvatarFallback>
             </Avatar>
           </div>
