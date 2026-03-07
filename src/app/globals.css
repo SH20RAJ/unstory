@@ -1,94 +1,43 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  
-  /* Custom Design Tokens */
-  --color-glass: var(--glass);
-  --color-glass-border: var(--glass-border);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-}
+@theme {
+  --color-background: #111213;
+  --color-foreground: #ffffff;
 
-:root {
-  --radius: 0.75rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.1 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.1 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.1 0 0);
-  --primary: oklch(0 0 0); /* Pure black for minimal premium look */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.95 0 0);
-  --secondary-foreground: oklch(0.1 0 0);
-  --muted: oklch(0.95 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: oklch(0.95 0 0);
-  --accent-foreground: oklch(0.1 0 0);
-  --destructive: oklch(0.5 0 0);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0 0 0);
+  --color-primary: #58ff8a;
+  --color-primary-foreground: #111213;
 
-  /* Glassmorphism Tokens */
-  --glass: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-blur: 12px;
-}
+  --color-card: #161718;
+  --color-card-foreground: #ffffff;
 
-.dark {
-  --background: oklch(0.05 0 0); /* Near black */
-  --foreground: oklch(0.95 0 0);
-  --card: oklch(0.08 0 0);
-  --card-foreground: oklch(0.95 0 0);
-  --popover: oklch(0.08 0 0);
-  --popover-foreground: oklch(0.95 0 0);
-  --primary: oklch(1 0 0); /* White for contrast */
-  --primary-foreground: oklch(0 0 0);
-  --secondary: oklch(0.15 0 0);
-  --secondary-foreground: oklch(0.95 0 0);
-  --muted: oklch(0.15 0 0);
-  --muted-foreground: oklch(0.6 0 0);
-  --accent: oklch(0.15 0 0);
-  --accent-foreground: oklch(0.95 0 0);
-  --destructive: oklch(0.4 0 0);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: oklch(1 0 0);
+  --color-popover: #161718;
+  --color-popover-foreground: #ffffff;
 
-  /* Dark Glassmorphism */
-  --glass: rgba(20, 20, 20, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur: 12px;
+  --color-secondary: #1a1b1c;
+  --color-secondary-foreground: #ffffff;
+
+  --color-muted: #1a1b1c;
+  --color-muted-foreground: #888888;
+
+  --color-accent: #58ff8a;
+  --color-accent-foreground: #111213;
+
+  --color-destructive: #ff4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #222222;
+  --color-input: #222222;
+  --color-ring: #58ff8a;
+
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Outfit", sans-serif;
 }
 
 @layer base {
@@ -96,6 +45,25 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-black;
+  }
+}
+
+@layer utilities {
+  .italic-accent {
+    font-family: inherit;
+    font-style: italic;
+    font-weight: 300;
+    text-transform: lowercase;
+  }
+
+  /* Extreme High Contrast Shadows */
+  .shadow-neon {
+    box-shadow: 0 0 20px rgba(88, 255, 138, 0.15);
+  }
+
+  .text-neon {
+    color: #58ff8a;
+    text-shadow: 0 0 10px rgba(88, 255, 138, 0.3);
   }
 }

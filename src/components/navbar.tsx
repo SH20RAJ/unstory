@@ -5,13 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const navLinks = [
-  { name: "Products", href: "/products" },
-  { name: "Open Source", href: "/open-source" },
-  { name: "Blog", href: "https://blog.unstory.app" },
-  { name: "About", href: "/about" },
-];
+import { siteConfig } from "@/config/site-config";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
@@ -26,49 +20,45 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-4 w-full z-50 px-4 md:px-8 pointer-events-none">
+    <header className="fixed top-0 w-full z-50 px-6 py-6 pointer-events-none">
       <nav
-        className={`mx-auto max-w-5xl h-14 md:h-16 flex items-center justify-between rounded-full border px-6 transition-all duration-500 pointer-events-auto shadow-2xl ${
+        className={`mx-auto max-w-7xl h-16 flex items-center justify-between border-b transition-all duration-300 pointer-events-auto ${
           isScrolled
-            ? "bg-background/40 backdrop-blur-xl border-white/10"
-            : "bg-background/20 backdrop-blur-md border-white/5"
+            ? "border-primary/20 bg-background/80 backdrop-blur-md"
+            : "border-transparent bg-transparent"
         }`}
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-primary shadow-sm group-hover:opacity-80 transition-all duration-300">
-             <span className="text-primary-foreground font-bold text-lg">U</span>
+          <div className="w-10 h-10 flex items-center justify-center bg-primary rounded-xs rotate-45 group-hover:rotate-0 transition-transform duration-500">
+             <span className="text-primary-foreground font-black text-xl -rotate-45 group-hover:rotate-0 transition-transform duration-500">U</span>
           </div>
-          <span className="font-semibold text-lg tracking-tight text-foreground">Unstory</span>
+          <span className="font-black text-2xl tracking-tighter text-white uppercase">{siteConfig.name}</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1 bg-secondary/50 rounded-full p-1 border border-border backdrop-blur-sm">
-          {navLinks.map((link) => (
+        <div className="hidden md:flex items-center gap-8">
+          {siteConfig.mainNav.map((link) => (
             <Link
-              key={link.name}
+              key={link.title}
               href={link.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-all duration-300"
+              className="text-sm font-bold tracking-widest uppercase text-white/50 hover:text-primary transition-colors duration-300"
             >
-              {link.name}
+              {link.title}
             </Link>
           ))}
-        </div>
-
-        {/* Desktop CTA */}
-        <div className="hidden md:flex items-center">
-          <Button asChild className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 shadow-sm hover:scale-105 transition-all duration-300 active:scale-95">
-            <Link href="/products">Get Started</Link>
+          <Button asChild className="rounded-none bg-primary hover:bg-white text-primary-foreground font-black uppercase tracking-widest h-11 px-8 transition-all duration-300">
+            <Link href="/products">Join</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-foreground p-2 rounded-full hover:bg-secondary/50 transition-colors"
+          className="md:hidden text-white p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -76,31 +66,35 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 10, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-18 left-4 right-4 bg-background/80 backdrop-blur-xl border border-border rounded-3xl shadow-xl md:hidden overflow-hidden pointer-events-auto"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-background z-40 md:hidden pointer-events-auto p-12 flex flex-col justify-center gap-12"
           >
-            <nav className="flex flex-col p-4 gap-2">
-              {navLinks.map((link) => (
+            <div className="flex flex-col gap-8">
+              {siteConfig.mainNav.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.title}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-4 hover:bg-secondary/50 rounded-2xl"
+                  className="text-5xl font-black tracking-tighter text-white hover:text-primary transition-colors"
                 >
-                  {link.name}
+                  {link.title}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border mt-2 px-2 pb-2">
-                <Button asChild className="w-full h-14 rounded-2xl bg-primary text-lg font-medium">
-                  <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Started
-                  </Link>
-                </Button>
-              </div>
-            </nav>
+            </div>
+            <Button asChild className="w-full h-20 rounded-none bg-primary text-2xl font-black uppercase tracking-widest text-primary-foreground">
+              <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>
+                Join Now
+              </Link>
+            </Button>
+            <button 
+              className="absolute top-8 right-8 text-white/50 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={40} />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

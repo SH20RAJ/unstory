@@ -1,17 +1,11 @@
 import { HeroSection } from "@/sections/hero";
-import { VisionSection } from "@/sections/vision";
-import { WhyUnstorySection } from "@/sections/why-unstory";
-import { FounderSection } from "@/sections/founder";
-import { CTASection } from "@/sections/cta";
+import { AboutSection } from "@/sections/about";
 
 export default function Home() {
   return (
-    <>
+    <main className="min-h-screen bg-background">
       <HeroSection />
-      <VisionSection />
-      <WhyUnstorySection />
-      <FounderSection />
-      <CTASection />
-    </>
+      <AboutSection />
+    </main>
   );
 }
