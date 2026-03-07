@@ -8,115 +8,126 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-20">
-      {/* Animated Background Gradients */}
-      <div className="absolute inset-0 w-full h-full bg-background overflow-hidden -z-10">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+      {/* Dynamic Background Glows */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden -z-10 bg-background">
         <motion.div
           animate={{
+            x: [0, 50, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute -top-[10%] -left-[10%] w-[60%] h-[60%] rounded-full bg-primary/30 blur-[150px]"
+        />
+        <motion.div
+          animate={{
+            x: [0, -40, 0],
+            y: [0, -60, 0],
             scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            rotate: [0, 90, 0],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-primary/20 blur-[120px]"
+          className="absolute top-[30%] -right-[15%] w-[50%] h-[70%] rounded-full bg-blue-500/20 blur-[150px]"
         />
-        <motion.div
-          animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.2, 0.4, 0.2],
-            rotate: [0, -90, 0],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[40%] -right-[10%] w-[40%] h-[60%] rounded-full bg-blue-500/20 blur-[120px]"
-        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(var(--background),0.8)_100%)]" />
       </div>
 
       <div className="container px-4 md:px-6 flex flex-col items-center text-center z-10">
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 inline-flex items-center rounded-full border border-border/50 bg-muted/50 px-3 py-1 text-sm font-medium backdrop-blur-sm"
+          className="mb-8 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-semibold backdrop-blur-xl shadow-2xl"
         >
-          <Sparkles className="mr-2 h-4 w-4 text-primary" />
-          <span className="text-muted-foreground">Introducing the Unstory Ecosystem</span>
+          <Sparkles className="mr-2 h-4 w-4 text-primary animate-pulse" />
+          <span className="bg-linear-to-r from-white to-white/60 bg-clip-text text-transparent">Next-Gen SaaS Studio</span>
         </motion.div>
 
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-linear-to-b from-foreground to-foreground/60"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative"
         >
-          Build. Launch. <span className="text-primary">Scale.</span>
-        </motion.h1>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 leading-[0.9] text-white">
+            Design.<br />
+            Publish.<br />
+            <span className="bg-linear-to-b from-primary to-primary/50 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(var(--primary),0.3)]">Prosper.</span>
+          </h1>
+        </motion.div>
 
-        {/* Subheadline */}
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-[700px] text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-[750px] text-lg md:text-2xl text-muted-foreground mb-12 leading-relaxed font-medium"
         >
-          Unstory is a premium SaaS product studio building powerful AI and productivity tools to amplify human potential.
+          Unstory builds high-performance digital experiences and AI-powered infrastructure for the modern internet era.
         </motion.p>
 
-        {/* CTAs */}
+        {/* Primary Actions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto items-center"
         >
-          <Button size="lg" asChild className="rounded-full h-12 px-8 text-base">
+          <Button size="lg" asChild className="rounded-full h-14 px-10 text-lg font-bold bg-primary hover:bg-primary/90 text-white shadow-[0_0_40px_rgba(var(--primary),0.4)] hover:scale-105 transition-all duration-300">
             <Link href="/products">
               Explore Products
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="rounded-full h-12 px-8 text-base bg-background/50 backdrop-blur-sm border-border hover:bg-muted/50">
-            <Link href="/contact">Join Early Access</Link>
-          </Button>
+          <Link href="/contact" className="text-lg font-bold text-white/70 hover:text-white transition-colors group flex items-center gap-2">
+            Talk to Founder
+            <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white/40 group-hover:translate-x-1 transition-all">
+              <ArrowRight className="w-4 h-4" />
+            </div>
+          </Link>
         </motion.div>
 
-        {/* Abstract Ecosystem Visual */}
+        {/* Central Visual Element */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="w-full max-w-5xl mt-20 relative"
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mt-24 relative w-full max-w-4xl perspective-[2000px]"
         >
-          <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent z-10" />
-          <div className="rounded-xl border border-border/50 bg-card/50 backdrop-blur-xl p-2 shadow-2xl overflow-hidden glass-panel">
-            <div className="w-full h-[300px] md:h-[400px] rounded-lg bg-muted/30 border border-border/30 relative flex items-center justify-center overflow-hidden">
-               {/* Abstract floating elements */}
+          <div className="relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-3xl p-4 shadow-2xl overflow-hidden group">
+            <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+            <div className="w-full h-[400px] md:h-[500px] rounded-[32px] bg-black/40 border border-white/5 relative flex items-center justify-center overflow-hidden">
+               {/* Animated floating orbs in background */}
                <motion.div 
-                 animate={{ y: [0, -15, 0] }} 
-                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                 className="absolute left-[20%] top-[30%] w-24 h-24 rounded-2xl bg-primary/20 backdrop-blur-md border border-primary/30 shadow-[0_0_30px_rgba(var(--primary),0.2)] flex items-center justify-center"
-               >
-                 <div className="w-8 h-8 rounded-full bg-primary/50" />
-               </motion.div>
+                 animate={{ rotate: 360 }} 
+                 transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+                 className="absolute w-[150%] h-[150%] bg-[conic-gradient(from_0deg,transparent,rgba(var(--primary),0.1),transparent)]"
+               />
                
-               <motion.div 
-                 animate={{ y: [0, 20, 0] }} 
-                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                 className="absolute right-[25%] bottom-[25%] w-32 h-32 rounded-full bg-blue-500/20 backdrop-blur-md border border-blue-500/30 flex items-center justify-center"
+               {/* Core Visual */}
+               <motion.div
+                 animate={{ y: [0, -20, 0], rotate: [0, 2, 0] }}
+                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                 className="z-20 w-48 h-48 md:w-64 md:h-64 rounded-[48px] bg-linear-to-br from-white/10 to-white/5 backdrop-blur-3xl border border-white/20 shadow-[0_0_80px_rgba(255,255,255,0.1)] flex items-center justify-center group-hover:scale-110 transition-transform duration-700"
                >
-                 <div className="w-12 h-12 rounded-lg bg-blue-500/40 rotate-12" />
-               </motion.div>
-
-               <motion.div 
-                 animate={{ y: [0, -10, 0] }} 
-                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 2 }}
-                 className="z-10 w-48 h-48 rounded-3xl bg-foreground/5 backdrop-blur-xl border border-foreground/10 shadow-2xl flex items-center justify-center"
-               >
-                 <div className="w-16 h-16 rounded-2xl bg-foreground/20 flex items-center justify-center">
-                    <span className="text-foreground font-bold text-3xl">U</span>
+                 <div className="w-24 h-24 md:w-32 md:h-32 rounded-[32px] bg-primary flex items-center justify-center shadow-[0_0_50px_rgba(var(--primary),0.5)]">
+                    <span className="text-white font-black text-5xl md:text-7xl drop-shadow-lg">U</span>
                  </div>
                </motion.div>
+               
+               {/* Floating elements */}
+               <motion.div 
+                 animate={{ y: [0, 30, 0], x: [0, 10, 0] }} 
+                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+                 className="absolute left-[15%] top-[20%] w-24 h-24 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl"
+               />
+               <motion.div 
+                 animate={{ y: [0, -30, 0], x: [0, -10, 0] }} 
+                 transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 2 }}
+                 className="absolute right-[15%] bottom-[20%] w-32 h-32 rounded-3xl bg-primary/10 backdrop-blur-xl border border-primary/20 shadow-2xl"
+               />
             </div>
           </div>
         </motion.div>

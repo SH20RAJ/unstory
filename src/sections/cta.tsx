@@ -7,29 +7,36 @@ import Link from "next/link";
 
 export function CTASection() {
   return (
-    <section className="relative py-32 md:py-48 flex flex-col items-center justify-center overflow-hidden bg-background">
+    <section className="relative py-32 md:py-64 flex flex-col items-center justify-center overflow-hidden bg-background">
       
-      {/* Animated gradient mesh background */}
+      {/* High-Impact Background Visuals */}
       <div className="absolute inset-0 w-full h-full -z-10 bg-background overflow-hidden">
         <motion.div
            animate={{
+            x: [-100, 100, -100],
+            y: [-50, 50, -50],
             scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[100px]"
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/10 rounded-full blur-[150px]"
         />
         <motion.div
            animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.05, 0.15, 0.05],
+            x: [100, -100, 100],
+            y: [50, -50, 50],
+            scale: [1, 1.3, 1],
           }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 2 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/20 rounded-full blur-[120px]"
+          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 2 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-[150px]"
         />
         
-        {/* Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+        {/* Animated Grid Overlay */}
+        <motion.div 
+          animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[40px_40px] opacity-20" 
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-background via-transparent to-background" />
       </div>
 
       <div className="container mx-auto px-4 text-center z-10">
@@ -37,48 +44,48 @@ export function CTASection() {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm shadow-[0_0_15px_rgba(var(--primary),0.3)]"
+          className="mb-12 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-6 py-2 text-sm font-bold text-primary backdrop-blur-3xl shadow-2xl"
         >
-          <Sparkles className="mr-2 h-4 w-4" />
-          Start your journey today
+          <Sparkles className="mr-3 h-5 w-5 text-primary animate-pulse" />
+          Ready to transcend the ordinary?
         </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-linear-to-b from-foreground to-foreground/50"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-10 text-white leading-[0.9]"
         >
-          Join the Unstory Ecosystem
+          Join the <br /> 
+          <span className="bg-linear-to-r from-primary to-primary/50 bg-clip-text text-transparent italic drop-shadow-[0_0_30px_rgba(var(--primary),0.3)]">Ecosystem.</span>
         </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-[600px] mx-auto text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="max-w-2xl mx-auto text-xl md:text-3xl text-muted-foreground mb-16 leading-relaxed font-medium"
         >
-          Experience the next generation of AI-native SaaS products. Built for individuals and teams who demand the best from their tools.
+          High-performance tools for high-performance builders.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-8 w-full sm:w-auto"
         >
-          <Button size="lg" asChild className="rounded-full h-14 px-8 text-lg font-semibold shadow-2xl hover:scale-105 transition-transform duration-300">
+          <Button size="lg" asChild className="rounded-full h-16 px-12 text-xl font-bold bg-primary hover:bg-primary/90 text-white shadow-[0_0_50px_rgba(var(--primary),0.4)] hover:scale-110 transition-all duration-300">
             <Link href="/products">
-              Explore Products
-              <ArrowRight className="ml-2 h-5 w-5" />
+              View All Products
+              <ArrowRight className="ml-3 h-6 w-6" />
             </Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="rounded-full h-14 px-8 text-lg font-semibold bg-background/50 backdrop-blur-sm border-border hover:bg-muted/50 hover:scale-105 transition-transform duration-300">
-            <Link href="/contact">Join Early Access</Link>
+          <Button size="lg" variant="ghost" asChild className="rounded-full h-16 px-12 text-xl font-bold text-white/50 hover:text-white hover:bg-white/5 transition-all duration-300">
+            <Link href="/contact">Get in Touch</Link>
           </Button>
         </motion.div>
       </div>

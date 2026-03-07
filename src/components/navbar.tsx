@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Products", href: "/products" },
-  { name: "Developers", href: "/developers" },
   { name: "Open Source", href: "/open-source" },
   { name: "Blog", href: "https://blog.unstory.app" },
   { name: "About", href: "/about" },
@@ -27,77 +26,77 @@ export function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-md border-border"
-          : "bg-transparent border-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-8 h-16 flex items-center justify-between pointer-events-auto">
+    <header className="fixed top-4 w-full z-50 px-4 md:px-8 pointer-events-none">
+      <nav
+        className={`mx-auto max-w-5xl h-14 md:h-16 flex items-center justify-between rounded-full border px-6 transition-all duration-500 pointer-events-auto shadow-2xl ${
+          isScrolled
+            ? "bg-background/40 backdrop-blur-xl border-white/10"
+            : "bg-background/20 backdrop-blur-md border-white/5"
+        }`}
+      >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-foreground rounded-md flex items-center justify-center transition-transform group-hover:scale-105">
-            <span className="text-background font-bold text-xl leading-none">U</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-linear-to-br from-primary/80 to-primary/40 shadow-[0_0_20px_rgba(var(--primary),0.3)] group-hover:shadow-primary/50 transition-all duration-300">
+             <span className="text-white font-bold text-lg">U</span>
           </div>
-          <span className="font-semibold text-xl tracking-tight">Unstory</span>
+          <span className="font-bold text-lg tracking-tight bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">Unstory</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5 backdrop-blur-sm">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/10 rounded-full transition-all duration-300"
             >
               {link.name}
             </Link>
           ))}
-        </nav>
+        </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild className="rounded-full">
-            <Link href="/products">Explore Products</Link>
+        <div className="hidden md:flex items-center">
+          <Button asChild className="rounded-full bg-primary hover:bg-primary/90 text-white border-0 shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 active:scale-95">
+            <Link href="/products">Get Started</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-foreground p-2"
+          className="md:hidden text-foreground p-2 rounded-full hover:bg-white/10 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Nav */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 10, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-16 left-0 w-full bg-background border-b border-border shadow-lg md:hidden"
+            className="absolute top-18 left-4 right-4 bg-background/60 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl md:hidden overflow-hidden pointer-events-auto"
           >
-            <nav className="flex flex-col p-4 gap-4">
+            <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-4 py-2 hover:bg-muted rounded-md"
+                  className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-4 hover:bg-white/5 rounded-2xl"
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-border px-4">
-                <Button asChild className="w-full rounded-full">
+              <div className="pt-4 border-t border-white/5 mt-2 px-2 pb-2">
+                <Button asChild className="w-full h-14 rounded-2xl bg-primary text-lg font-bold">
                   <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>
-                    Explore Products
+                    Get Started
                   </Link>
                 </Button>
               </div>
