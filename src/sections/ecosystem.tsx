@@ -14,10 +14,10 @@ const products = [
   {
     name: "FormGuard",
     description: "AI-powered form backend. Capture submissions, block spam at the edge, and get deep insights instantly.",
-    href: "https://formguard.strivio.world/",
+    href: "https://formguard.unstory.app/",
     icon: Shield,
-    image: "https://formguard.strivio.world/og.png",
-    favicon: "https://formguard.strivio.world/favicon.ico",
+    image: "https://formguard.unstory.app/og.png",
+    favicon: "https://formguard.unstory.app/favicon.ico",
     delay: 0.1,
   },
   {

@@ -47,10 +47,10 @@ export const siteConfig = {
     {
       name: "FormGuard",
       description: "AI-powered form backend. Capture submissions, block spam at the edge, and get deep insights instantly.",
-      href: "https://formguard.strivio.world/",
+      href: "https://formguard.unstory.app/",
       icon: Shield,
-      image: "https://formguard.strivio.world/og.png",
-      favicon: "https://formguard.strivio.world/favicon.ico",
+      image: "https://formguard.unstory.app/og.png",
+      favicon: "https://formguard.unstory.app/favicon.ico",
       delay: 0.1,
     },
     {
@@ -108,6 +108,14 @@ export const siteConfig = {
       delay: 0.7,
     },
   ],
+  founder: {
+    name: "Shaswat Raj",
+    role: "Founder & Chief Architect",
+    bio: "Building the infrastructure for human potential. Passionate about AI, minimalist design, and extreme performance.",
+    twitter: "https://x.com/sh20raj",
+    linkedin: "https://linkedin.com/in/sh20raj",
+    github: "https://github.com/sh20raj",
+  },
   footerLinks: [
     { title: "Privacy", href: "/privacy" },
     { title: "Terms", href: "/terms" },
