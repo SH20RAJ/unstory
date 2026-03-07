@@ -23,10 +23,10 @@ const products = [
   {
     name: "IndexFast",
     description: "Get indexed in minutes. Automatically submit your URLs to Google, Bing, and Yandex to boost your SEO.",
-    href: "https://indexfast.strivio.world/",
+    href: "https://indexfast.unstory.app/",
     icon: Zap,
-    image: "https://indexfast.strivio.world/og.png",
-    favicon: "https://indexfast.strivio.world/favicon.ico",
+    image: "https://indexfast.unstory.app/og.png",
+    favicon: "https://indexfast.unstory.app/favicon.ico",
     delay: 0.2,
   },
   {
