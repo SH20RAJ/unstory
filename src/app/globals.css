@@ -41,54 +41,54 @@
 :root {
   --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.1 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.6 0.2 280); /* Vibrant Purple */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.6 0.2 280);
-  
+  --popover-foreground: oklch(0.1 0 0);
+  --primary: oklch(0 0 0); /* Pure black for minimal premium look */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.95 0 0);
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.5 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0 0 0);
+
   /* Glassmorphism Tokens */
-  --glass: rgba(255, 255, 255, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-blur: 16px;
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --glass-blur: 12px;
 }
 
 .dark {
-  --background: oklch(0.08 0 0); /* Deep charcoal, not pure black */
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.12 0.01 280 / 0.5); /* Semi-transparent for glass effect */
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.7 0.2 280); /* Brighter Purple in dark mode */
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.15 0.02 280);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.15 0.02 280);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.15 0.02 280);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --border: oklch(0.2 0.02 280);
-  --input: oklch(0.2 0.02 280);
-  --ring: oklch(0.7 0.2 280);
-  
+  --background: oklch(0.05 0 0); /* Near black */
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(1 0 0); /* White for contrast */
+  --primary-foreground: oklch(0 0 0);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.6 0 0);
+  --accent: oklch(0.15 0 0);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.4 0 0);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(1 0 0);
+
   /* Dark Glassmorphism */
-  --glass: rgba(15, 15, 25, 0.5);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: 24px;
+  --glass: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 12px;
 }
 
 @layer base {

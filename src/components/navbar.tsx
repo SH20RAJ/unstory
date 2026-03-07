@@ -36,19 +36,19 @@ export function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-linear-to-br from-primary/80 to-primary/40 shadow-[0_0_20px_rgba(var(--primary),0.3)] group-hover:shadow-primary/50 transition-all duration-300">
-             <span className="text-white font-bold text-lg">U</span>
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-primary shadow-sm group-hover:opacity-80 transition-all duration-300">
+             <span className="text-primary-foreground font-bold text-lg">U</span>
           </div>
-          <span className="font-bold text-lg tracking-tight bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">Unstory</span>
+          <span className="font-semibold text-lg tracking-tight text-foreground">Unstory</span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full p-1 border border-white/5 backdrop-blur-sm">
+        <div className="hidden md:flex items-center gap-1 bg-secondary/50 rounded-full p-1 border border-border backdrop-blur-sm">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/10 rounded-full transition-all duration-300"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-full transition-all duration-300"
             >
               {link.name}
             </Link>
@@ -57,14 +57,14 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center">
-          <Button asChild className="rounded-full bg-primary hover:bg-primary/90 text-white border-0 shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 active:scale-95">
+          <Button asChild className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground border-0 shadow-sm hover:scale-105 transition-all duration-300 active:scale-95">
             <Link href="/products">Get Started</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-foreground p-2 rounded-full hover:bg-white/10 transition-colors"
+          className="md:hidden text-foreground p-2 rounded-full hover:bg-secondary/50 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -80,7 +80,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 10, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-18 left-4 right-4 bg-background/60 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl md:hidden overflow-hidden pointer-events-auto"
+            className="absolute top-18 left-4 right-4 bg-background/80 backdrop-blur-xl border border-border rounded-3xl shadow-xl md:hidden overflow-hidden pointer-events-auto"
           >
             <nav className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
@@ -88,13 +88,13 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-4 hover:bg-white/5 rounded-2xl"
+                  className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors px-6 py-4 hover:bg-secondary/50 rounded-2xl"
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-white/5 mt-2 px-2 pb-2">
-                <Button asChild className="w-full h-14 rounded-2xl bg-primary text-lg font-bold">
+              <div className="pt-4 border-t border-border mt-2 px-2 pb-2">
+                <Button asChild className="w-full h-14 rounded-2xl bg-primary text-lg font-medium">
                   <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>
                     Get Started
                   </Link>

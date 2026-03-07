@@ -5,14 +5,14 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border bg-background py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
-        
+
         {/* Brand */}
         <div className="col-span-2 lg:col-span-2 flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-foreground rounded-md flex items-center justify-center transition-transform group-hover:scale-105">
+            <div className="w-8 h-8 bg-foreground rounded-md flex items-center justify-center transition-transform group-hover:opacity-80">
               <span className="text-background font-bold text-xl leading-none">U</span>
             </div>
-            <span className="font-semibold text-xl tracking-tight">Unstory</span>
+            <span className="font-semibold text-xl tracking-tight text-foreground">Unstory</span>
           </Link>
           <p className="text-sm text-muted-foreground w-full max-w-xs mt-2">
             Unstory is a SaaS product studio building powerful AI and productivity tools.
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
 
       </div>
-      
+
       {/* Bottom Legal */}
       <div className="container mx-auto px-4 md:px-8 mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">

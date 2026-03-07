@@ -45,7 +45,7 @@ export function OpenSourceSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center mb-6"
+              className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mb-6"
             >
               <Github size={24} />
             </motion.div>
@@ -110,14 +110,14 @@ export function OpenSourceSection() {
                       </CardDescription>
                       <div className="flex items-center gap-4 text-xs text-muted-foreground">
                         <div className="flex items-center gap-1.5">
-                          <span className={`w-2 h-2 rounded-full ${repo.color}`} />
+                          <span className="w-2 h-2 rounded-full bg-foreground/50" />
                           {repo.language}
                         </div>
-                        <div className="flex items-center gap-1.5 hover:text-yellow-500 transition-colors">
+                        <div className="flex items-center gap-1.5 hover:text-foreground transition-colors">
                           <Star size={14} />
                           {repo.stars}
                         </div>
-                        <div className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
+                        <div className="flex items-center gap-1.5 hover:text-foreground transition-colors">
                           <GitFork size={14} />
                           {repo.forks}
                         </div>
