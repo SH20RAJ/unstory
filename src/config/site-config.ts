@@ -49,8 +49,8 @@ export const siteConfig = {
       description: "AI-powered form backend. Capture submissions, block spam at the edge, and get deep insights instantly.",
       href: "https://formguard.unstory.app/",
       icon: Shield,
-      image: "https://formguard.unstory.app/og.png",
-      favicon: "https://formguard.unstory.app/favicon.ico",
+      image: "https://formguard.unstory.app/og-image-1.png",
+      favicon: "https://formguard.strivio.world/favicon.svg",
       delay: 0.1,
     },
     {
@@ -58,8 +58,8 @@ export const siteConfig = {
       description: "Get indexed in minutes. Automatically submit your URLs to Google, Bing, and Yandex to boost your SEO.",
       href: "https://indexfast.unstory.app/",
       icon: Zap,
-      image: "https://indexfast.unstory.app/og.png",
-      favicon: "https://indexfast.unstory.app/favicon.ico",
+      image: "https://indexfast.unstory.app/og-image.png",
+      favicon: "https://indexfast.unstory.app/favicon-32x32.png",
       delay: 0.2,
     },
     {
@@ -67,8 +67,8 @@ export const siteConfig = {
       description: "A curated collection of fast, free, and privacy-focused tools for every creative and professional need.",
       href: "https://30tools.com/",
       icon: Wrench,
-      image: "https://30tools.com/og.png",
-      favicon: "https://30tools.com/favicon.ico",
+      image: "https://30tools.com/og-image.png",
+      favicon: "https://30tools.com/icons/apple-touch-icon.png",
       delay: 0.3,
     },
     {
@@ -94,8 +94,8 @@ export const siteConfig = {
       description: "Stop losing engagement. Open Instagram, YouTube, and TikTok links directly in native apps.",
       href: "https://wify.my/",
       icon: LinkIcon,
-      image: "https://wify.my/og.png",
-      favicon: "https://wify.my/favicon.ico",
+      image: "https://wify.my/opengraph-image.png?c44d3561e3402b83",
+      favicon: "https://wify.my/icon.png?7b1840f03fdaaf6f",
       delay: 0.6,
     },
     {
